@@ -38,7 +38,7 @@ export class PostListComponent implements OnInit {
 
   public buildConnection(): void {
     this._hubConnection = new HubConnectionBuilder()
-      .withUrl("https://localhost:5001/Message", {
+      .withUrl("https://messageboardapi.azurewebsites.net/Message", {
         skipNegotiation: true,
         transport: signalR.HttpTransportType.WebSockets
       })
