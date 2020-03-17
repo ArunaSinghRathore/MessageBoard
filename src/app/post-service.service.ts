@@ -16,11 +16,11 @@ export class PostService {
   public newPost=new PostCreate();
   
   public getAllPosts(pageNumber: number, pageSize: number): Observable<Array<PostRead>> {
-    return this.http.get<Array<PostRead>>(environment.baseUrl + "?PageIndex=" + pageNumber + "&PageSize=" + pageSize);  
+    return this.http.get<Array<PostRead>>("http://messageboardapi.azurewebsites.net/MessageBoard" + "?PageIndex=" + pageNumber + "&PageSize=" + pageSize);  
     
   }
   public createNewPost(newPost: PostCreate): Observable<boolean> {
-    var response = this.http.post<boolean>(environment.baseUrl, newPost);
+    var response = this.http.post<boolean>("http://messageboardapi.azurewebsites.net/MessageBoard", newPost);
     return response;    
   }
 }
