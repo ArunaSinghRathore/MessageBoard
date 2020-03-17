@@ -4,10 +4,11 @@
 
 export const environment = {
   production: false,
-  baseUrl: '/messageboardapi.azurewebsites.net/MessageBoard',
+  baseUrl: 'https://localhost:44350/MessageBoard',
   paginationQueryString : '?PageIndex={0}&PageSize={1}',
   width: "800px",
-  height: "500px"
+  height: "500px",
+  signalRUrl : 'https://localhost:44350/Message'
 };
 
 /*

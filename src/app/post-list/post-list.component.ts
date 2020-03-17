@@ -41,7 +41,7 @@ export class PostListComponent implements OnInit {
 
   public buildConnection(): void {
     this._hubConnection = new HubConnectionBuilder()
-      .withUrl("https://localhost:5001/Message", {
+      .withUrl(environment.signalRUrl, {
         skipNegotiation: true,
         transport: signalR.HttpTransportType.WebSockets
       })
@@ -76,7 +76,7 @@ export class PostListComponent implements OnInit {
     this.postService.getAllPosts(this.pageIndex, this.pageSize).subscribe(x => {
       console.log(x);
       this.posts = x;
-      this.pagerLength = 50;
+      this.pagerLength = x.postsCount;
     });
   }
 

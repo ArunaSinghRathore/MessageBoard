@@ -17,11 +17,12 @@ export class PostService {
   public newPost=new PostCreate();
   
   public getAllPosts(pageNumber: number, pageSize: number): Observable<ListPostRead> {
-    return this.http.get<ListPostRead>("https://localhost:5001/MessageBoard" + "?PageIndex=" + pageNumber + "&PageSize=" + pageSize);  
+    console.log(environment.baseUrl);
+    return this.http.get<ListPostRead>(environment.baseUrl + "?PageIndex=" + pageNumber + "&PageSize=" + pageSize);  
     
   }
   public createNewPost(newPost: PostCreate): Observable<boolean> {
-    var response = this.http.post<boolean>("https://localhost:5001/MessageBoard", newPost);
+    var response = this.http.post<boolean>(environment.baseUrl, newPost);
     return response;    
   }
 }
