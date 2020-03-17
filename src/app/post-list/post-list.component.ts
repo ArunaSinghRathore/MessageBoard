@@ -74,9 +74,9 @@ export class PostListComponent implements OnInit {
       this.pageSize = event.pageSize;
     }
     this.postService.getAllPosts(this.pageIndex, this.pageSize).subscribe(x => {
+      console.log(x);
       this.posts = x;
       this.pagerLength = x.pagesCount;
-      console.log(x);
     });
   }
 
