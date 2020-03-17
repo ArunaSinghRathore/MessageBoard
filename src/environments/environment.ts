@@ -2,15 +2,22 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// export const environment = {
+//   production: false,
+//   baseUrl: 'https://localhost:44350/MessageBoard',
+//   paginationQueryString : '?PageIndex={0}&PageSize={1}',
+//   width: "800px",
+//   height: "500px",
+//   signalRUrl : 'https://localhost:44350/Message'
+// };
 export const environment = {
-  production: false,
-  baseUrl: 'https://localhost:44350/MessageBoard',
+  production: true,
+  baseUrl: 'https://messageboardapi.azurewebsites.net/MessageBoard',
   paginationQueryString : '?PageIndex={0}&PageSize={1}',
   width: "800px",
   height: "500px",
-  signalRUrl : 'https://localhost:44350/Message'
+  signalRUrl : 'https://messageboardapi.azurewebsites.net/Message'
 };
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
