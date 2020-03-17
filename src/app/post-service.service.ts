@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { PostCreate } from './models/post-create';
 import { HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { ListPostRead } from './models/list-post-read';
 
 
 
@@ -15,12 +16,12 @@ export class PostService {
   constructor(private http: HttpClient) {}
   public newPost=new PostCreate();
   
-  public getAllPosts(pageNumber: number, pageSize: number): Observable<Array<PostRead>> {
-    return this.http.get<Array<PostRead>>("https://messageboardapi.azurewebsites.net/MessageBoard" + "?PageIndex=" + pageNumber + "&PageSize=" + pageSize);  
+  public getAllPosts(pageNumber: number, pageSize: number): Observable<ListPostRead> {
+    return this.http.get<ListPostRead>("https://localhost:5001/MessageBoard" + "?PageIndex=" + pageNumber + "&PageSize=" + pageSize);  
     
   }
   public createNewPost(newPost: PostCreate): Observable<boolean> {
-    var response = this.http.post<boolean>("https://messageboardapi.azurewebsites.net/MessageBoard", newPost);
+    var response = this.http.post<boolean>("https://localhost:5001/MessageBoard", newPost);
     return response;    
   }
 }

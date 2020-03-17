@@ -8,18 +8,18 @@
     <mat-icon>add</mat-icon>Add Post
   </button>
 </mat-toolbar>
-<mat-paginator [length]="100" [pageSize]="10"
+<mat-paginator [length]="pagerLength" [pageSize]="10"
  [pageSizeOptions] ="[5, 10, 25, 100]"
   (page) = "populateAllPosts($event)">
 </mat-paginator>
 
 
-      <mat-card *ngFor="let post of posts" class="post-card">
+      <mat-card *ngFor="let post of posts.lstPosts" class="post-card">
         <mat-card-header >
           <mat-card-title>{{post.name}}</mat-card-title>
-          <mat-card-subtitle>{{post.date | dateTransform}}</mat-card-subtitle>
+          <mat-card-subtitle>{{post.postDate | dateTransform}}</mat-card-subtitle>
         </mat-card-header>
         <hr>
-        <mat-card-content><p>{{post.text}}</p></mat-card-content>
+        <mat-card-content><p>{{post.postText}}</p></mat-card-content>
       </mat-card>     
 

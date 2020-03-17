@@ -10,6 +10,7 @@ import { PostCreate } from "../models/post-create";
 import { AlertifyService } from "../alertify.service";
 import { NotificationService } from "../Notification.service";
 import { environment } from "src/environments/environment";
+import { ListPostRead } from '../models/list-post-read';
 
 @Component({
   selector: "app-post-list",
@@ -17,10 +18,12 @@ import { environment } from "src/environments/environment";
   styleUrls: ["./post-list.component.css"]
 })
 export class PostListComponent implements OnInit {
-  posts = new Array<PostRead>();
+  posts = new ListPostRead();
+  
   private _hubConnection: HubConnection;
   private pageIndex: number = 0;
   private pageSize: number = 10;
+  public pagerLength : number = 150;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   constructor(
@@ -38,7 +41,7 @@ export class PostListComponent implements OnInit {
 
   public buildConnection(): void {
     this._hubConnection = new HubConnectionBuilder()
-      .withUrl("https://messageboardapi.azurewebsites.net/Message", {
+      .withUrl("https://localhost:5001/Message", {
         skipNegotiation: true,
         transport: signalR.HttpTransportType.WebSockets
       })
@@ -72,6 +75,8 @@ export class PostListComponent implements OnInit {
     }
     this.postService.getAllPosts(this.pageIndex, this.pageSize).subscribe(x => {
       this.posts = x;
+      this.pagerLength = x.pagesCount;
+      console.log(x);
     });
   }
 
