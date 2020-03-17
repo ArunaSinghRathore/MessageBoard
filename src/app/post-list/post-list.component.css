@@ -1,0 +1,16 @@
+
+.home-toolbar{
+    position: sticky;
+}
+
+.toolbar-span{
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+.post-card{
+    width: 50%; 
+    margin-left: 350px;
+    margin-top: 20px;
+    background-color:azure;
+}

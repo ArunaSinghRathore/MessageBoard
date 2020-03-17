@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: '/messageboardapi.azurewebsites.net/MessageBoard',
+  paginationQueryString : '?PageIndex={0}&PageSize={1}',
+  width: "800px",
+  height: "500px"
 };
 
 /*

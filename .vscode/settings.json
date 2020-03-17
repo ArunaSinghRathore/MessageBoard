@@ -1,0 +1,5 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/2657cfce-302d-4af6-9b00-c0c67fde5d52/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/message-board",
+    "appService.deploySubpath": ""
+}

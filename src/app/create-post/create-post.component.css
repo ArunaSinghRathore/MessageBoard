@@ -1,0 +1,16 @@
+.createPost-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.createPost-form > * {
+    width: 100%;
+}
+
+.close{
+    width: 100%;
+}
+
+.name-input{
+    width:50% !important;
+}
