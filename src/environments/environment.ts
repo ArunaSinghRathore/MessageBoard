@@ -1,4 +1,4 @@
-export const environment = {
+ export const environment = {
   production: true,
   baseUrl: 'https://messageboardapiv2.azurewebsites.net/MessageBoard',
   paginationQueryString : '?PageIndex={0}&PageSize={1}',
