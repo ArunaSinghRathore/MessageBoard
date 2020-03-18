@@ -1,10 +1,10 @@
-export const environment = {
+ export const environment = {
   production: true,
-  baseUrl: 'https://messageboardapi.azurewebsites.net/MessageBoard',
+  baseUrl: 'https://messageboardapiv2.azurewebsites.net/MessageBoard',
   paginationQueryString : '?PageIndex={0}&PageSize={1}',
   width: "800px",
   height: "500px",
-  signalRUrl : 'https://messageboardapi.azurewebsites.net/Message'
+  signalRUrl : 'https://messageboardapiv2.azurewebsites.net/Message'
 };
 // export const environment = {
 //   production: true,
