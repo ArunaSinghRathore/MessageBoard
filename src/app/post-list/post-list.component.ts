@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, ViewChild } from "@angular/core";
 import { PostRead } from "../models/post-read";
 import { PostService } from "../post-service.service";
-import { MatDialog, PageEvent, MatPaginator } from "@angular/material";
+import { MatDialog } from "@angular/material/dialog";
+import { PageEvent, MatPaginator } from "@angular/material/paginator";
 import { CreatePostComponent } from "../create-post/create-post.component";
 import { DatePipePipe } from "../pipes/date-pipe.pipe";
 import { HubConnection, HubConnectionBuilder } from "@aspnet/signalr";
@@ -24,7 +25,7 @@ export class PostListComponent implements OnInit {
   private pageIndex: number = 0;
   private pageSize: number = 10;
   public pagerLength : number = 150;
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  @ViewChild(MatPaginator,{static: false}) paginator: MatPaginator;
 
   constructor(
     private postService: PostService,

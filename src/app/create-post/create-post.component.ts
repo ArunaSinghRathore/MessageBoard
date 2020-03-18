@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from "@angular/core";
-import { MatDialogRef } from "@angular/material";
+import { MatDialogRef } from "@angular/material/dialog";
 import { PostService } from "../post-service.service";
 import { PostCreate } from '../models/post-create';
 
